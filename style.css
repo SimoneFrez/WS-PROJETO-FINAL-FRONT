@@ -1,0 +1,121 @@
+/* CSS para o projeto - estilo.css */
+
+/* Estilo geral do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+}
+
+/* Container principal para alinhar conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 20px auto; /* Centraliza o container */
+    padding: 0 20px;
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e9e9e9;
+    margin-top: 40px;
+}
+
+/* Estilo para seções principais */
+.secao-bem-vindo {
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* Estilo para os botões */
+.botao {
+    background-color: #28a745; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: #218838; /* Verde mais escuro */
+}
+
+/* Organiza a lista de produtos */
+.lista-produtos {
+    display: flex; /* Deixa os produtos um ao lado do outro */
+    justify-content: center;
+    gap: 20px; /* Espaço entre os produtos */
+    flex-wrap: wrap; /* Se não couber, vai pra linha de baixo */
+}
+
+/* Card de cada produto */
+.produto {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    background-color: white;
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Container da página de Login */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.form-campo {
+    margin-bottom: 15px;
+}
+
+.form-campo label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-campo input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo para os itens no carrinho */
+.carrinho-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.botao-remover {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Responsividade - Requisito do trabalho */
+/* Quando a tela for menor que 600px (celulares) */
+@media (max-width: 600px) {
+    .lista-produtos {
+        flex-direction: column; /* Coloca os produtos um embaixo do outro */
+        align-items: center;
+    }
+}
