@@ -1,123 +1,124 @@
 // scripts.js
 
-/*
-    FUNÇÃO DE LOGIN
-    Requisito: Autenticar usuário na página de login.
-    Como funciona: Pega os valores dos campos de usuário e senha e
-    compara com valores fixos.
-*/
+// Suas funções de login e de montagem de kit continuam aqui...
 function fazerLogin() {
-    // Pega o que o usuário digitou
     var usuario = document.getElementById("usuario").value;
     var senha = document.getElementById("senha").value;
-
-    // Verifica se o usuário e a senha estão corretos
     if (usuario === "aluno" && senha === "123") {
         alert("Login bem-sucedido!");
-        // Redireciona para a página principal
         window.location.href = "index.html";
     } else {
         alert("Usuário ou senha incorretos.");
     }
 }
+// (Aqui entram as funções do kit.html se você as estiver usando)
 
 /*
-    LÓGICA DO CARRINHO (CRUD - Create, Read, Update, Delete)
-    Requisito: Adicionar itens, calcular total, validar formulários.
-    Como funciona: Usamos o localStorage do navegador para guardar
-    os itens do carrinho.
+    LÓGICA DO CARRINHO (CRUD COMPLETO)
 */
 
-// CREATE (Adicionar item ao carrinho)
+// CREATE (POST): Adicionar item ao carrinho
 function adicionarAoCarrinho(nome, preco) {
-    // 1. Pega o carrinho que já existe no localStorage
-    // Se não existir, cria um array vazio []
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-    // 2. Adiciona o novo produto ao array
-    carrinho.push({ nome: nome, preco: preco });
+    // Verifica se o item já existe no carrinho
+    let itemExistente = carrinho.find(item => item.nome === nome);
 
-    // 3. Salva o carrinho atualizado de volta no localStorage
+    if (itemExistente) {
+        // Se existe, apenas aumenta a quantidade (isso já é um tipo de PUT)
+        itemExistente.quantidade++;
+    } else {
+        // Se não existe, adiciona o novo produto com quantidade 1
+        carrinho.push({ nome: nome, preco: preco, quantidade: 1 });
+    }
+
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
-
-    // 4. Avisa o usuário
     alert(nome + " foi adicionado ao carrinho!");
 }
 
-// READ (Carregar e mostrar o carrinho na página)
+// READ (GET): Carregar e mostrar o carrinho na página
 function carregarCarrinho() {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     let listaCarrinhoDiv = document.getElementById('lista-carrinho');
-    
-    // Limpa a lista antes de adicionar os itens, para não duplicar
     listaCarrinhoDiv.innerHTML = '';
-
     let total = 0;
 
-    // Loop para criar o HTML de cada item do carrinho
     for (let i = 0; i < carrinho.length; i++) {
         let item = carrinho[i];
+        let subtotal = item.preco * item.quantidade;
+        total += subtotal;
         
-        // Cria uma div para o item
-        let itemDiv = document.createElement('div');
-        itemDiv.classList.add('carrinho-item');
-        
-        // Adiciona o nome e o preço
-        itemDiv.innerHTML = `<p>${item.nome}</p><p>R$ ${item.preco.toFixed(2)}</p>`;
-        
-        // Adiciona o botão de remover (DELETE)
-        let botaoRemover = document.createElement('button');
-        botaoRemover.classList.add('botao-remover');
-        botaoRemover.innerText = 'Remover';
-        // A função removerDoCarrinho será chamada com o índice 'i' do item
-        botaoRemover.onclick = function() {
-            removerDoCarrinho(i);
-        };
-        
-        itemDiv.appendChild(botaoRemover);
-        listaCarrinhoDiv.appendChild(itemDiv);
-
-        // Soma o preço do item ao total (UPDATE do total)
-        total += item.preco;
+        // Agora o HTML do item inclui um campo para mudar a quantidade
+        listaCarrinhoDiv.innerHTML += `
+            <div class="carrinho-item">
+                <p>${item.nome}</p>
+                <div class="item-quantidade">
+                    <label>Qtd:</label>
+                    <input type="number" value="${item.quantidade}" min="1" onchange="atualizarQuantidade(${i}, this.value)">
+                </div>
+                <p>R$ ${subtotal.toFixed(2)}</p>
+                <button class="botao-remover" onclick="removerDoCarrinho(${i})">Remover</button>
+            </div>
+        `;
     }
-
-    // Atualiza o valor total na página
     document.getElementById('valor-total').innerText = `R$ ${total.toFixed(2)}`;
 }
 
+// UPDATE (PUT): Atualizar a quantidade de um item
+function atualizarQuantidade(index, novaQuantidade) {
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    // Converte a nova quantidade para número, garantindo que seja pelo menos 1
+    let quantidade = parseInt(novaQuantidade);
+    if (quantidade > 0) {
+        carrinho[index].quantidade = quantidade;
+    } else {
+        // Se a quantidade for zero ou menor, remove o item
+        carrinho.splice(index, 1);
+    }
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    // Recarrega a visualização do carrinho para mostrar o novo total
+    carregarCarrinho();
+}
 
-// DELETE (Remover item do carrinho)
+// DELETE: Remover item do carrinho
 function removerDoCarrinho(index) {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-    // Remove o item do array na posição 'index'
     carrinho.splice(index, 1);
-
-    // Salva o carrinho atualizado no localStorage
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
-
-    // Recarrega a lista na página para mostrar a remoção
     carregarCarrinho();
 }
 
 /*
-    Para a página de checkout, você pode criar uma função de validação.
-    Exemplo:
+    VALIDAÇÃO AVANÇADA DO FORMULÁRIO DE CHECKOUT
 */
 function validarFormularioCheckout() {
     let nome = document.getElementById('nomeCompleto').value;
-    let endereco = document.getElementById('endereco').value;
+    let email = document.getElementById('email').value;
+    let cep = document.getElementById('cep').value;
 
-    // Verifica se os campos estão vazios
-    if (nome === "" || endereco === "") {
+    // 1. Validação de campos vazios (já tínhamos)
+    if (nome === "" || email === "" || cep === "") {
         alert("Por favor, preencha todos os campos obrigatórios.");
-        return false; // Impede o envio do formulário
+        return false;
     }
 
-    alert("Compra finalizada com sucesso! (Isso é uma simulação)");
+    // 2. Validação do formato do E-mail (usando uma expressão regular simples)
+    let emailRegex = /\S+@\S+\.\S+/;
+    if (!emailRegex.test(email)) {
+        alert("Por favor, insira um endereço de e-mail válido.");
+        return false;
+    }
+
+    // 3. Validação do CEP (verifica se contém apenas números)
+    let cepRegex = /^[0-9]+$/;
+    if (!cepRegex.test(cep)) {
+        alert("O CEP deve conter apenas números.");
+        return false;
+    }
     
-    // Limpa o carrinho depois da compra
+    // Se todas as validações passarem
+    alert("Compra finalizada com sucesso! (Isso é uma simulação)");
     localStorage.removeItem('carrinho');
-    window.location.href = "index.html"; // Volta pra home
-    return true;
+    window.location.href = "index.html";
+    return true; // Permite o "envio" do formulário
 }
