@@ -203,7 +203,6 @@ menu.active {
     width: 90%;
     box-shadow: 0 2vw 4vw rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    margin-top: 10%;
 }
 
 .produto img {
@@ -221,6 +220,9 @@ menu.active {
 .produto p {
     font-size: clamp(1rem, 3.5vw, 1.5rem);
     color: #555;
+}
+.produto:not(:first-child){
+    margin-top: 5%;
 }
 
 .produto:hover {
