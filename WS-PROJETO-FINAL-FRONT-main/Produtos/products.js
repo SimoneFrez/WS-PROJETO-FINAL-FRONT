@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         '30': 50.00,
         '60': 90.00
     };
+
     const sabores = ['Laranja', 'Maçã-Verde', 'Morango', 'Pêssego', 'Uva'];
 
     // Função para atualizar o modal com base no tamanho selecionado
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             criarSeletorSabor('Sabor:', 'select-sabor-1');
         }
     }
+
     // Função que cria um seletor de sabor dinamicamente
     function criarSeletorSabor(labelTexto, id) {
         const div = document.createElement('div');

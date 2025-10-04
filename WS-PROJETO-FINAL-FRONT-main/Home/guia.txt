@@ -1,0 +1,19 @@
+## 👥 **Divisão de Tarefas para 6 Pessoas (Desenvolvedores)**
+
+### **👤 Pessoa 1: Desenvolvedor da Home**
+**Responsabilidades:**
+- Criar e desenvolver a página principal (`index.html`)
+- Implementar seção hero com imagem e texto
+- Criar seção de produtos em destaque
+- Configurar navegação principal
+
+**Tarefas Específicas:**
+1. Desenvolver `index.html` completa
+2. Implementar seção hero com sua foto
+3. Criar grid de produtos em destaque
+4. Configurar links para outras páginas
+5. Integrar JavaScript básico da home
+
+**Arquivos para Criar/Editar:**
+- `index.html`
+- Funcionalidades básicas em `js/main.js`
