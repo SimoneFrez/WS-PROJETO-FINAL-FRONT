@@ -5,7 +5,9 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
+.bggeral {
+    background: linear-gradient(to bottom, #075e52, #0a8372);
+}
 body {
     background-color: #f2f2f2;
     color: #222;
@@ -14,7 +16,7 @@ body {
 /* ===== NAVBAR ===== */
 .containerNav {
     width: 100%;
-    background: linear-gradient(to bottom, #3d9a74, #0a8372);
+    background: linear-gradient(to bottom, #075e52, #eeeeee);
     position: relative;
 }
 
@@ -104,52 +106,87 @@ menu.active {
     color: rgb(0, 98, 143);
     transform: scale(1.2);
 }
+/* ===== carrossel ===== */
+.carrossel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 300px;
+}
+
+@media (min-width: 768px) {
+    .slides {
+        height: 190px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .slides {
+        height: 200px;
+    }
+}
+
+.slides picture {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
 
 /* ===== HERO ===== */
 .secaoHero {
-    text-align: center;
-    padding: 40% 5% 25% 5%;
-    background: url('./assets/hero_bg.jpg') center/cover no-repeat;
-    color: #fff;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10%;
 }
-
-.secaoHero::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.4);
-}
-
 .secaoHero h2 {
-    font-size: clamp(2rem, 8vw, 3.5rem);
-    margin-bottom: 5%;
-    position: relative;
-    z-index: 1;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: bold;
+    text-align: center;
+    color: #031a16;
+    background: linear-gradient(90deg, #203b32, #0d201e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    text-shadow: 5px 3px 5px rgba(0, 0, 0, 0.329);
 }
 
 .conteudoHero {
+    margin: 10% 5%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5%;
-    margin-bottom: 8%;
-    position: relative;
-    z-index: 1;
 }
-
-.conteudoHero img {
-    width: 60%;
-    max-width: 150px;
-    border-radius: 5%;
-}
-
 .conteudoHero p {
-    font-size: clamp(1rem, 4vw, 1.3rem);
-    max-width: 90%;
+    margin-right: 5%;
+    border: 2px solid #075e52;
+    border-radius: 20px;
+    padding: 5%;
+    box-shadow: 2px 2px 2px #075e527c;
 }
-
+.conteudoHero img {
+    width: 50%;
+    height: auto;
+}
 .btn_hero {
     background: linear-gradient(to bottom, #3d9a74, #0a8372);
     border: none;
@@ -176,7 +213,13 @@ menu.active {
 .btn_hero:hover a {
     color: #222;
 }
-
+.linha {
+    background-color: #075e52;
+    display: block;
+    border-radius: 20px;
+    height: 2px;
+    margin: 0 3%;
+}
 /* ===== PRINCIPAL ===== */
 .principal {
     padding: 8% 5%;
@@ -261,40 +304,136 @@ menu.active {
 }
 
 /* ===== MEDIA QUERIES ===== */
+/* ==================== TABLET: ≥768px ==================== */
 @media (min-width: 768px) {
-    .secaoHero {
-        padding: 25% 5% 15% 5%;
-    }
+  .cabecalho {
+    padding: 2% 4%;
+  }
 
-    .ProdutosDestaque {
-        gap: 4%;
-    }
+  .logo {
+    width: 10%;
+  }
+
+  .navegacao {
+    padding: 15% 5%;
+  }
+
+  .conteudoHero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .conteudoHero p {
+    width: 45%;
+    margin-right: 5%;
+  }
+
+  .conteudoHero img {
+    width: 45%;
+  }
+
+  .ProdutosDestaque {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5%;
+  }
+
+  .produto {
+    width: 45%;
+  }
+
+  .painel {
+    max-width: 80%;
+  }
 }
 
+/* ==================== NOTEBOOK: ≥1024px ==================== */
 @media (min-width: 1024px) {
-    .cabecalho {
-        padding: 2% 10%;
-    }
+  .cabecalho {
+    padding: 1.5% 3%;
+  }
 
-    .produto {
-        width: 45%;
-    }
+  .logo {
+    width: 8%;
+  }
 
-    .conteudoHero img {
-        max-width: 200px;
-    }
+  .titulo {
+    font-size: 2.5rem;
+  }
+
+  #burguer {
+    font-size: 2rem;
+  }
+
+  .navegacao {
+    padding: 10% 5%;
+  }
+
+  .conteudoHero {
+    margin: 5% 10%;
+  }
+
+  .conteudoHero p {
+    font-size: 1.2rem;
+    padding: 4%;
+  }
+
+  .btn_hero {
+    padding: 2% 5%;
+  }
+
+  .produto {
+    width: 30%;
+  }
+
+  .painel {
+    max-width: 70%;
+  }
 }
 
+/* ==================== DESKTOP: ≥1200px ==================== */
 @media (min-width: 1200px) {
-    .cabecalho {
-        padding: 2% 15%;
-    }
+  .cabecalho {
+    padding: 1% 2%;
+  }
 
-    .produto {
-        width: 30%;
-    }
+  .logo {
+    width: 6%;
+  }
 
-    .conteudoHero img {
-        max-width: 250px;
-    }
+  .titulo {
+    font-size: 2.8rem;
+  }
+
+  .conteudoHero {
+    margin: 5% 15%;
+  }
+
+  .conteudoHero p {
+    font-size: 1.3rem;
+    padding: 3%;
+  }
+
+  .btn_hero {
+    font-size: 1.2rem;
+    padding: 1.5% 4%;
+  }
+
+  .ProdutosDestaque {
+    gap: 3%;
+  }
+
+  .produto {
+    width: 25%;
+  }
+
+  .painel {
+    max-width: 60%;
+  }
+
+  .rodape {
+    font-size: 0.8rem;
+  }
 }

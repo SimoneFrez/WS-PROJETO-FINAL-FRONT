@@ -11,7 +11,8 @@
 <body>
     <header>
         <div class="containerNav">
-            <div class="cabecalho">
+        <div class="bggeral">
+             <div class="cabecalho">
                 <img src="./assets/Logo_aleatoria.png" alt="Logo da empresa" class="logo">
                 <h1 class="titulo">SgStore</h1>
                 <i id="burguer" class="bi bi-list" onclick="clickMenu()"></i>
@@ -29,15 +30,31 @@
                 </menu>
             </div> <!-- cabecalho -->  
         </div>  <!-- containerNav -->  
+            <div class="carrossel">
+            <div class="slides">
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="./assets/bannerPc.png">
+                        <source media="(min-width: 768px)" srcset="./assets/bannerPc.png">
+                        <img src="./assets/bannerCel.png" alt="Banner do carrossel">
+                    </picture>
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="./assets/bannerPc1.png">
+                        <source media="(min-width: 768px)" srcset="./assets/bannerPc1.png">
+                        <img src="./assets/bannerCel1.png" alt="Banner do carrossel">
+                    </picture>
+                </div>
+            </div>
         <div class="secaoHero">
             <h2>Seja bem vindo</h2>
             <div class="conteudoHero">
                 <p>Aqui Você pode montar seu kit personalizado pro seu cuidado e bem-estar</p>
-                <img src="./assets/linkZeda.webp" alt="Link do jogo zelda">
+                <img src="./assets/linkZelda.webp" alt="Link do jogo zelda">
             </div>
             <button class="btn_hero"><a href=""><strong>Monte seu kit agora</strong>!</a></button>
         </div>
+        </div>
     </header>
+    <div><span class="linha">.</span></div>
     <main class="principal">
         <h1>Nossa lista de produtos</h1>
         <div class="ProdutosDestaque">
