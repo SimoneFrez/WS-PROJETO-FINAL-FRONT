@@ -1,7 +1,5 @@
 let carrinho = [];
 
-
-
 const adicionarAoCarrinho = (nome, preco) => {
     const produtoExistente = carrinho.find(item => item.nome === nome);
     
@@ -20,8 +18,8 @@ const removerDoCarrinho = (nome) => {
 }
 
 const atualizarCarrinho = () => {
-    const lista = document.getElementById("cart-items");
-    const totalElemento = document.getElementById("total");
+    const lista = document.getElementById("lista-carrinho");
+    const totalElemento = document.getElementById("valor-total");
     const contador = document.getElementById("cart-count");
 
     lista.innerHTML = "";
@@ -30,12 +28,20 @@ const atualizarCarrinho = () => {
     carrinho.forEach(item => {
         total += item.preco * item.quantidade;
 
-        const li = document.createElement("li");
-        li.innerHTML = `
-            ${item.nome} - R$ ${item.preco.toFixed(2)} x ${item.quantidade}
-            <button onclick="removerDoCarrinho('${item.nome}')">X</button>
+        const div = document.createElement("div");
+        div.className = "carrinho-item";
+        div.innerHTML = `
+            <img src="produto.jpg" alt="${item.nome}">
+            <div class="carrinho-info">
+                <h4>${item.nome}</h4>
+                <p>Quantidade: ${item.quantidade}</p>
+                <p>Preço: R$ ${item.preco.toFixed(2)}</p>
+            </div>
+            <div class="carrinho-actions">
+                <button onclick="removerDoCarrinho('${item.nome}')">Remover</button>
+            </div>
         `;
-        lista.appendChild();
+        lista.appendChild(div);
     });
 
     totalElemento.textContent = total.toFixed(2);
@@ -50,5 +56,18 @@ const finalizarCompra = () => {
 
     alert("Compra finalizada com sucesso!");
     carrinho = [];
+    atualizarCarrinho();
+}
+
+document.getElementById("abrirCarrinho").addEventListener("click", () => {
+    const lista = document.getElementById("lista-carrinho");
+    if(lista.style.display === "block") {
+        lista.style.display = "none";
+    } else {
+        lista.style.display = "block";
+    }
+});
+
+const carregarCarrinho = () => {
     atualizarCarrinho();
 }

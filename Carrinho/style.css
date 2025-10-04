@@ -1,16 +1,121 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.navbar {
+    background-color: #00f7f7;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-body {
-    background-color: rgb(255, 255, 255);
-    color: #000000;
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar .nav-link {
+    color: #333;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+    color: #007bff;
+}
+
+#abrirCarrinho {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+#abrirCarrinho:hover {
+    background-color: #0056b3;
+}
+
+#lista-carrinho {
+    margin-top: 20px;
+}
+
+.carrinho-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.carrinho-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.carrinho-item h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.carrinho-total {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.botao:hover {
+    background-color: #218838;
 }
 
 footer {
-    width: 120px;
-    margin-top: 10px;
-    float: left;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #87d4d4;
+    color: white;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+body {
+    background-color: #e0f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+main h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px){
+    .carrinho-item{
+        flex-direction: column;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .carrinho-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+    }
 }
