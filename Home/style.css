@@ -1,275 +1,331 @@
-/* ======= BASE ======= */
+/* ===== ESTILO GERAL ===== */
 body {
     background-color: #e0f7f7;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
-    font-family: Arial, sans-serif;
-}
-
-/* ======= HEADER ======= */
-header {
-    background: linear-gradient(to bottom, rgb(28, 95, 126), rgba(108, 185, 236, 0.5));
-    height: 450px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.cabecalho {
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: #87d4d4 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333 !important;
     display: flex;
     align-items: center;
-    padding: 15px;
 }
 
-.logo {
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-    border-radius: 20px;
+.brand-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 8px;
 }
 
-.titulo {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #fff;
+.navbar .nav-link {
+    color: #333 !important;
+    margin-right: 10px;
+    transition: color 0.3s;
+    font-weight: 500;
 }
 
-#burguer {
-    background-color: #2e2d2d;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    margin-left: auto;
-    cursor: pointer;
-    transition: 0.3s;
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #007bff !important;
 }
 
-#burguer:hover {
-    background-color: white;
-    color: black;
+/* ===== BANNER HERO ===== */
+.banner-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
-/* ======= MENU ======= */
-menu {
-    display: none;
-    position: fixed;
+.banner-container {
+    position: relative;
+    width: 100%;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 600px;
+}
+
+.banner-overlay {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 999;
-    align-items: center;
-    justify-content: center;
-}
-
-menu nav {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 280px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.close-btn {
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-    float: right;
-}
-
-menu ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-}
-
-menu li {
-    margin: 12px 0;
-    width: 150px;
-    height: 40px;
-    border-radius: 20px;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #333;
-    transition: 0.3s;
 }
 
-menu li:hover {
-    background-color: #007bff;
+.banner-content {
+    text-align: center;
     color: white;
+    padding: 2rem;
+    max-width: 600px;
 }
 
-menu a {
-    text-decoration: none;
-    font-size: 20px;
-    color: inherit;
+.banner-content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* ======= HERO ======= */
-.secaoHero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+.banner-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-.secaoHero h2 {
-    font-size: 28px;
-    color: #fff;
-    margin-bottom: 15px;
+/* ===== BANNERS SECUNDÁRIOS ===== */
+.banner-section {
+    margin: 3rem 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.secaoHero p {
-    font-size: 18px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 4px 5px 4px rgba(0,0,0,0.2);
-    margin: 10px;
+.banner-section:hover {
+    transform: translateY(-5px);
 }
 
-.conteudoHero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.banner-secondary {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
-.conteudoHero img {
-    width: 80px;
-    padding: 20px;
-    filter: drop-shadow(1px 10px 10px rgba(0, 0, 0, 0.8));
-}
-
-.btn_hero {
-    margin-top: 20px;
+/* ===== BOTÃO HERO ===== */
+.btn-hero {
     background-color: #28a745;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 30px;
     border-radius: 10px;
     text-decoration: none;
-    font-size: 15px;
-    transition: background 0.3s;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
 }
 
-.btn_hero:hover {
+.btn-hero:hover {
     background-color: #218838;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    color: white;
+    text-decoration: none;
 }
 
-/* ======= PRODUTOS ======= */
+/* ===== PRODUTOS SECTION ===== */
 .principal {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
+    flex: 1;
+    padding: 3rem 0;
 }
 
-.principal h1 {
-    font-size: 22px;
+.produtos-section h2 {
+    color: #333;
+    font-weight: bold;
     text-align: center;
-    margin: 20px 0;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
 }
 
 .ProdutosDestaque {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
 }
 
 .produto {
-    background-color: #fff;
+    background-color: #f9f9f9;
     border-radius: 15px;
-    padding: 15px;
+    padding: 2rem 1.5rem;
     text-align: center;
-    max-width: 250px;
-    margin: 0 auto;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
 }
 
 .produto:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.produto img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.produto-icon {
+    font-size: 3rem;
+    color: #87d4d4;
+    margin-bottom: 1rem;
 }
 
 .produto h3 {
-    margin: 5px 0;
-    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
 }
 
 .produto p {
-    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.produto-price {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* ===== PAINEL SECTION ===== */
+.painel {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+.painel h3 {
     color: #333;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
 }
 
-/* ======= RODAPÉ ======= */
+.painel p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-list li {
+    padding: 0.5rem 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.benefits-list i {
+    color: #28a745;
+    margin-right: 0.5rem;
+}
+
+.feature-icon {
+    font-size: 4rem;
+    color: #87d4d4;
+    margin-bottom: 1rem;
+}
+
+.feature-text {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* ===== RODAPÉ ===== */
 footer {
-  text-align: center;
-  padding: 15px 0;
-  background-color: #87d4d4;
-  color: white;
-  margin-top: 40px;
-  font-size: 0.9rem;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #87d4d4;
+    color: white;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    width: 100%;
 }
 
-/* ======= RESPONSIVIDADE ======= */
+.footer-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
 
-/* --- MOBILE até 768px --- */
-@media (min-width: 768px) {
-    .titulo {
-        font-size: 1.8rem;
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .banner-content h2 {
+        font-size: 2rem;
     }
-
-    .conteudoHero img {
-        width: 100px;
+    
+    .banner-content p {
+        font-size: 1rem;
     }
-
+    
+    .banner-image {
+        max-height: 400px;
+    }
+    
     .ProdutosDestaque {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .painel {
+        padding: 2rem 1.5rem;
+    }
+    
+    .feature-icon {
+        font-size: 3rem;
+        margin-top: 2rem;
+    }
+    
+    .brand-logo {
+        width: 30px;
+        height: 30px;
     }
 }
 
-/* --- DESKTOP a partir de 1024px --- */
-@media (max-width: 1024px) {
-    header {
-        height: 600px;
+@media (max-width: 576px) {
+    .banner-content h2 {
+        font-size: 1.5rem;
     }
-
-    .titulo {
-        font-size: 3rem;
+    
+    .produtos-section h2 {
+        font-size: 1.8rem;
     }
-
-    .secaoHero p {
-        font-size: 22px;
-        width: 400px;
-        margin: 20px auto;
-    }
-
-    .conteudoHero img {
-        width: 150px;
-    }
-
-    .ProdutosDestaque {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-    }
-
+    
     .produto {
-        max-width: 280px;
+        padding: 1.5rem 1rem;
+    }
+    
+    .btn-hero {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .banner-section {
+        margin: 2rem 0;
     }
 }

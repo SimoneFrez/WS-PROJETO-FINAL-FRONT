@@ -1,81 +1,158 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuidado Essencial - Kits personalizados para seu bem-estar e autocuidado">
+    <title>Cuidado Essencial - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="../global.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="./script.js"></script>
-    <title>Document</title>
 </head>
 
 <body>
     <header>
-        <div class="containerNav">
-            <div class="cabecalho">
-                <!-- <img src="../Home/assets/Design sem nome (1).png" alt="Logo da empresa" class="logo"> -->
-                <!-- <h1 class="titulo">SgStore</h1> -->
-                <i id="burguer" class="bi bi-list" onclick="clickMenu()"></i>
-                <menu id="itens">
-                    <nav class="navegacao">
-                        <button class="close-btn" onclick="clickMenu()">✖</button>
-                        <ul>
-                            <li class="nav_item"><a href="../Produtos/index.html">Monte seu kit</a></li>
-                            <li class="nav_item"><a href="../Carrinho/index.html">Carrinho</a></li>
-                            <li class="nav_item"><a href="../Checkout/checkout.html">Finalizar Compra</a></li>
-                            <li class="nav_item"><a href="../Cadastro/cadastro.html">Cadastro</a></li>
-                            <li class="nav_item"><a href="../Login/login.html">Login</a></li>
-                        </ul>
-                    </nav>
-                </menu>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="../Home/index.html">
+                    <i class="bi bi-flower1 me-2"></i>Cuidado Essencial
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="../Home/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Produtos/index.html">Monte seu Kit</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Carrinho/index.html">Carrinho</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Cadastro/cadastro.html">Cadastro</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Login/login.html">Login</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="secaoHero">
-            <h2>Seja bem vindo</h2>
-            <div class="conteudoHero">
-                <p>Aqui você pode montar seu kit personalizado pro seu cuidado e bem-estar</p>
-                <!-- <img src="./assets/linkZelda.webp" alt="Link do jogo zelda"> -->
+        </nav>
+
+        <!-- Banner Hero -->
+        <section class="banner-hero">
+            <div class="banner-container">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="./assets/BANNER CELL.png">
+                    <source media="(min-width: 769px)" srcset="./assets/BANNER PC.png">
+                    <img src="./assets/BANNER PC.png" alt="Cuidado Essencial - Kits Personalizados" class="banner-image">
+                </picture>
+                <div class="banner-overlay">
+                    <div class="banner-content">
+                        <h2>Seu Bem-Estar Começa Aqui</h2>
+                        <p>Kits personalizados para seu cuidado essencial</p>
+                        <a href="../Produtos/index.html" class="btn-hero">
+                            <strong>Monte seu kit agora!</strong>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <button class="btn_hero"><a href="../Produtos/index.html"><strong>Monte seu kit agora</strong>!</a></button>
-        </div>
+        </section>
     </header>
+
     <main class="principal">
-        <h1>Nossa lista de produtos</h1>
-        <div class="conteudoHero">
-            <p>Aqui Você pode montar seu kit personalizado pro seu cuidado e bem-estar</p>
-            <!-- <img src="" alt="Link do jogo zelda"> -->
-        </div>
-        <div class="ProdutosDestaque">
-            <div class="produto">
-                <img src="" alt="">
-                <h3>kit relaxamento</h3>
-                <p>ideal para alivia o estresse do dia a dias</p>
-            </div>
-            <div class="produto">
-                <img src="" alt="">
-                <h3>kit relaxamento</h3>
-                <p>ideal para alivia o estresse do dia a dias</p>
-            </div>
-            <div class="produto">
-                <img src="" alt="">
-                <h3>kit relaxamento</h3>
-                <p>ideal para alivia o estresse do dia a dias</p>
-            </div>
-            <div class="produto">
-                <img src="" alt="">
-                <h3>kit relaxamento</h3>
-                <p>ideal para alivia o estresse do dia a dias</p>
-            </div>
-        </div>
-        <div class="painel">
-            <h3>....</h3>
-            <p></p>
+        <div class="container">
+            <!-- Banner Secundário 1 -->
+            <section class="banner-section">
+                <img src="./assets/BANNER CELL (1).png" alt="Kit Relaxamento" class="banner-secondary">
+            </section>
+
+            <section class="produtos-section">
+                <h2>Nossos Kits em Destaque</h2>
+                <p class="section-subtitle">Descubra nossa seleção especial para seu bem-estar</p>
+                
+                <div class="ProdutosDestaque">
+                    <div class="produto">
+                        <div class="produto-icon">
+                            <i class="bi bi-flower3"></i>
+                        </div>
+                        <h3>Kit Relaxamento</h3>
+                        <p>Ideal para aliviar o estresse do dia a dia com produtos naturais</p>
+                        <span class="produto-price">A partir de R$ 89,90</span>
+                        <button class="btn-adicionar-carrinho" onclick="adicionarAoCarrinho('Kit Relaxamento', 89.90)">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                    
+                    <div class="produto">
+                        <div class="produto-icon">
+                            <i class="bi bi-droplet"></i>
+                        </div>
+                        <h3>Kit Hidratação</h3>
+                        <p>Hidratação profunda para pele e cabelo com ingredientes selecionados</p>
+                        <span class="produto-price">A partir de R$ 79,90</span>
+                        <button class="btn-adicionar-carrinho" onclick="adicionarAoCarrinho('Kit Hidratação', 79.90)">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                    
+                    <div class="produto">
+                        <div class="produto-icon">
+                            <i class="bi bi-wind"></i>
+                        </div>
+                        <h3>Kit Aromaterapia</h3>
+                        <p>Óleos essenciais para equilibrar mente e corpo</p>
+                        <span class="produto-price">A partir de R$ 69,90</span>
+                        <button class="btn-adicionar-carrinho" onclick="adicionarAoCarrinho('Kit Aromaterapia', 69.90)">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                    
+                    <div class="produto">
+                        <div class="produto-icon">
+                            <i class="bi bi-sun"></i>
+                        </div>
+                        <h3>Kit Energia</h3>
+                        <p>Revitalize sua energia com produtos estimulantes</p>
+                        <span class="produto-price">A partir de R$ 99,90</span>
+                        <button class="btn-adicionar-carrinho" onclick="adicionarAoCarrinho('Kit Energia', 99.90)">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Banner Secundário 2 -->
+            <section class="banner-section">
+                <img src="./assets/BANNER PC (1).png" alt="Oferta Especial" class="banner-secondary">
+            </section>
+
+            <section class="painel">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3>Por que escolher o Cuidado Essencial?</h3>
+                        <p>Somos especializados em kits personalizados de bem-estar, com produtos selecionados que atendem às suas necessidades específicas. Todos nossos produtos são testados e aprovados, garantindo qualidade e satisfação.</p>
+                        <ul class="benefits-list">
+                            <li><i class="bi bi-check-circle"></i> Produtos 100% naturais</li>
+                            <li><i class="bi bi-check-circle"></i> Entrega rápida e segura</li>
+                            <li><i class="bi bi-check-circle"></i> Atendimento personalizado</li>
+                            <li><i class="bi bi-check-circle"></i> Satisfação garantida</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="feature-text">Qualidade Premium</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
-    <footer>
-        <p>Trabalho Final Serratec - 2025</p>
-    </footer>
-</body>
 
+    <footer>
+        <div class="container">
+            <p>Trabalho Final Serratec - 2024</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/globalScript.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
 </html>

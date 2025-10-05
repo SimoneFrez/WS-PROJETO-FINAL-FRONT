@@ -1,1 +1,1 @@
-const cadastrarUsuario = () => window.open('../Cadastro/cadastro.html', '_self')
+// const cadastrarUsuario = () => window.open('../Cadastro/cadastro.html', '_self')

@@ -4,37 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Cuidado Essencial</title>
-    <link href="../global.css" rel="stylesheet">
-    <link rel="stylesheet" href="../estilo.css">
+    <meta name="description" content="Faça login na Cuidado Essencial - Acesse sua conta personalizada">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="../global.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="../Home/index.html">Cuidado Essencial</a>
+                <a class="navbar-brand" href="../Home/index.html">
+                    <i class="bi bi-flower1 me-2"></i>Cuidado Essencial
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../Home/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Produtos/index.html">Monte seu Kit</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Carrinho/index.html">Carrinho</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Cadastro/cadastro.html">Cadastre-se</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
 
     <main class="container">
-        <div class="login-container">
-            <h2>Acesse sua Conta</h2>
-            <form onsubmit="return false;">
-                <div class="form-campo">
-                    <label for="emailLogin">E-mail:</label>
-                    <input type="email" id="emailLogin" required>
+        <div class="login-section">
+            <div class="login-container">
+                <h2>Acesse sua Conta</h2>
+                <p class="login-subtitle">Entre para gerenciar seus pedidos e favoritos</p>
+                
+                <form onsubmit="logarUsuario(); return false;">
+                    <div class="form-campo">
+                        <label for="emailLogin">
+                            <i class="icon-email"></i>
+                            E-mail:
+                        </label>
+                        <input type="email" id="emailLogin" placeholder="seu@email.com" required>
+                    </div>
+                    
+                    <div class="form-campo">
+                        <label for="senhaLogin">
+                            <i class="icon-password"></i>
+                            Senha:
+                        </label>
+                        <input type="password" id="senhaLogin" placeholder="Digite sua senha" required>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="lembrarLogin">
+                            <span class="checkmark"></span>
+                            Lembrar-me
+                        </label>
+                        <a href="#" class="forgot-password">Esqueci minha senha</a>
+                    </div>
+                    
+                    <button type="submit" class="botao">
+                        <span class="button-text">Entrar</span>
+                    </button>
+                </form>
+                
+                <div class="login-divider">
+                    <span>ou</span>
                 </div>
-                <div class="form-campo">
-                    <label for="senhaLogin">Senha:</label>
-                    <input type="password" id="senhaLogin" required>
-                </div>
-                <button onclick="logarUsuario()" class="botao">Entrar</button>
-            </form>
-            <p>Não tem uma conta? <a href="../Cadastro/cadastro.html">Cadastre-se</a></p>
+                
+                <p class="register-link">
+                    Não tem uma conta? <a href="../Cadastro/cadastro.html">Cadastre-se agora</a>
+                </p>
+            </div>
         </div>
     </main>
 
-    <script src="../js/auth.js"></script>
+    <footer>
+        <div class="container">
+            <p>Trabalho Final Serratec - 2024</p>
+        </div>
+    </footer>
+
+    <link src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></link>
+    <link src="../js/globalScript.js"></link>
+    <link src="../js/auth.js"></link>
 </body>
 </html>
