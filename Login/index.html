@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Cuidado Essencial</title>
     <meta name="description" content="Faça login na Cuidado Essencial - Acesse sua conta personalizada">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/globalScript.js"></script>
-    <script src="../js/auth.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="../global.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../globalStyle.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../globalScript.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="./script.js"></script>
 </head>
 <body>
     <header>
@@ -25,10 +26,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="../Home/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../Home/index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../Produtos/index.html">Monte seu Kit</a></li>
                         <li class="nav-item"><a class="nav-link" href="../Carrinho/index.html">Carrinho</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../Cadastro/cadastro.html">Cadastre-se</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Cadastro/index.html">Cadastro</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Login/index.html">Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -44,7 +46,6 @@
                 <form onsubmit="logarUsuario(); return false;">
                     <div class="form-campo">
                         <label for="emailLogin">
-                            <i class="icon-email"></i>
                             E-mail:
                         </label>
                         <input type="email" id="emailLogin" placeholder="seu@email.com" required>
@@ -52,7 +53,6 @@
                     
                     <div class="form-campo">
                         <label for="senhaLogin">
-                            <i class="icon-password"></i>
                             Senha:
                         </label>
                         <input type="password" id="senhaLogin" placeholder="Digite sua senha" required>

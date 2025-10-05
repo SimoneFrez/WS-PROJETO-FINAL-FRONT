@@ -37,6 +37,12 @@ main.container {
     flex: 1;
     padding: 2rem 0;
     max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 h2 {
@@ -145,7 +151,7 @@ footer {
 }
 
 /* ===== RESPONSIVIDADE ===== */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .navbar .nav-link {
         margin-right: 0;
         margin-bottom: 5px;
@@ -158,7 +164,7 @@ footer {
     
     .login-container {
         padding: 20px;
-        margin: 0 1rem;
+        margin: 0 auto;
     }
     
     h2 {
@@ -171,7 +177,7 @@ footer {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1024px) {
     .login-container {
         padding: 15px;
     }

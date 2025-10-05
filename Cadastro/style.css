@@ -1,4 +1,3 @@
-/* ===== ESTILO GERAL ===== */
 body {
     background-color: #e0f7f7;
     font-family: Arial, sans-serif;
@@ -9,7 +8,6 @@ body {
     flex-direction: column;
 }
 
-/* ===== NAVBAR ===== */
 .navbar {
     background-color: #87d4d4 !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -19,6 +17,8 @@ body {
     font-weight: bold;
     font-size: 1.5rem;
     color: #333 !important;
+    display: flex;
+    align-items: center;
 }
 
 .navbar .nav-link {
@@ -32,14 +32,12 @@ body {
     color: #007bff !important;
 }
 
-/* ===== MAIN CONTENT ===== */
 main.container {
     flex: 1;
     padding: 2rem 0;
     max-width: 1200px;
 }
 
-/* ===== SEÇÃO DO FORMULÁRIO ===== */
 .form-section {
     display: flex;
     flex-direction: column;
@@ -56,7 +54,6 @@ main.container {
     font-size: 2rem;
 }
 
-/* ===== CARTÃO DO FORMULÁRIO ===== */
 .form-card {
     background-color: #f9f9f9;
     border-radius: 10px;
@@ -73,17 +70,8 @@ main.container {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== GRUPOS DO FORMULÁRIO ===== */
 .form-group {
     margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #333;
-    font-size: 1rem;
 }
 
 .form-group input {
@@ -107,7 +95,6 @@ main.container {
     opacity: 0.7;
 }
 
-/* ===== BOTÃO ===== */
 .botao {
     background-color: #28a745;
     color: white;
@@ -132,7 +119,6 @@ main.container {
     transform: translateY(0);
 }
 
-/* ===== TEXTO DE LOGIN ===== */
 .login-text {
     text-align: center;
     margin-top: 1.5rem;
@@ -152,7 +138,6 @@ main.container {
     text-decoration: underline;
 }
 
-/* ===== VALIDAÇÃO ===== */
 .form-group input:invalid:not(:focus):not(:placeholder-shown) {
     border-color: #dc3545;
     background-color: #ffe6e6;
@@ -163,7 +148,6 @@ main.container {
     background-color: #e6ffe6;
 }
 
-/* ===== RODAPÉ ===== */
 footer {
     text-align: center;
     padding: 15px 0;
@@ -174,8 +158,7 @@ footer {
     width: 100%;
 }
 
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .navbar .nav-link {
         margin-right: 0;
         margin-bottom: 5px;
@@ -201,7 +184,7 @@ footer {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1024px) {
     .form-card {
         padding: 15px;
     }
@@ -211,14 +194,13 @@ footer {
     }
 }
 
-/* ===== ESTADOS DE BOTÃO ===== */
 .botao:disabled {
     background-color: #6c757d;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
 }
-/* ===== BANNER PÁGINAS INTERNAS ===== */
+
 .page-banner {
     width: 100%;
     margin-bottom: 2rem;
@@ -233,7 +215,7 @@ footer {
     object-fit: cover;
     display: block;
 }
-/* No style.css do cadastro e login */
+
 .spinner {
     animation: spin 1s linear infinite;
 }

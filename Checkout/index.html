@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Cuidado Essencial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="../globalStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../globalScript.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="../Home/index.html">
+                    <i class="bi bi-flower1 me-2"></i>Cuidado Essencial
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="../Home/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Produtos/index.html">Monte seu Kit</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Carrinho/index.html">Carrinho</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Cadastro/index.html">Cadastro</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Login/index.html">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2><i class="fas fa-shopping-bag me-2"></i>Finalizar Compra</h2>
+        <form class="login-container" onsubmit="return validarFormularioCheckout()">
+            <h4><i class="fas fa-truck me-2"></i>Dados de Entrega</h4>
+            <div class="form-campo">
+                <label for="nomeCompleto"><i class="fas fa-user me-1"></i>Nome Completo:</label>
+                <input type="text" id="nomeCompleto" required>
+            </div>
+            <div class="form-campo">
+                <label for="email"><i class="fas fa-envelope me-1"></i>E-mail:</label>
+                <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+            <div class="form-campo">
+                <label for="metodoPagamento"><i class="fas fa-credit-card me-1"></i>Escolha o metódo de pagamento:</label>
+                <select class="form-select" id="metodoPagamento" required>
+                <option value="">Selecione</option>
+                <option value="cartao">Cartão de Crédito</option>
+                <option value="cartao">Cartão de Débito</option>
+                <option value="pix">Pix</option>
+              </select>
+            </div>
+
+            <div id="pagamento-cartao" style="display:none;">
+                <h4><i class="fas fa-credit-card me-2"></i>Detalhes do Cartão</h4>
+                <div class="form-campo">
+                    <label for="numeroCartao"><i class="fas fa-credit-card me-1"></i>Número do Cartão:</label>
+                    <input type="text" id="numeroCartao" maxlength="16" placeholder="1234 5678 9012 3456">
+                </div>
+                <div class="form-campo">
+                    <label for="validadeCartao"><i class="fas fa-calendar-alt me-1"></i>Validade:</label>
+                    <input type="text" id="validadeCartao" maxlength="5" placeholder="MM/AA">
+                </div>
+                <div class="form-campo">
+                    <label for="cvvCartao"><i class="fas fa-lock me-1"></i>CVV:</label>
+                    <input type="text" id="cvvCartao" maxlength="3" placeholder="123">
+                </div>
+            </div>
+            <div id="pagamento-pix" style="display:none;">
+                <h4><i class="fas fa-qrcode me-2"></i>Pagamento via Pix</h4>
+                <p>Use o QR code abaixo para efetuar o pagamento via Pix:</p>
+                <img src="./assets/qrCode.png" alt="QR Code Pix" style="width:200px;height:200px;">
+                <p>Após o pagamento, envie o comprovante para nosso e-mail: pagamentos@cuidandoessencial.com></p>
+            </div>
+
+            <button type="submit" class="botao">
+                <i class="fas fa-lock me-2"></i>Pagar Agora
+            </button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Trabalho Final Serratec - 2024</p>
+        </div>
+    </footer>
+</body>
+</html>

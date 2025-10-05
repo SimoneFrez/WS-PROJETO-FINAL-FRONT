@@ -42,7 +42,6 @@ body {
     color: #007bff !important;
 }
 
-/* ===== BANNER HERO ===== */
 .banner-hero {
     position: relative;
     width: 100%;
@@ -94,7 +93,6 @@ body {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-/* ===== BANNERS SECUNDÁRIOS ===== */
 .banner-section {
     margin: 3rem 0;
     border-radius: 15px;
@@ -115,7 +113,6 @@ body {
     border-radius: 15px;
 }
 
-/* ===== BOTÃO HERO ===== */
 .btn-hero {
     background-color: #28a745;
     color: white;
@@ -137,7 +134,6 @@ body {
     text-decoration: none;
 }
 
-/* ===== PRODUTOS SECTION ===== */
 .principal {
     flex: 1;
     padding: 3rem 0;
@@ -205,7 +201,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* ===== PAINEL SECTION ===== */
 .painel {
     background-color: #f9f9f9;
     border-radius: 15px;
@@ -255,7 +250,6 @@ body {
     font-size: 1.2rem;
 }
 
-/* ===== RODAPÉ ===== */
 footer {
     text-align: center;
     padding: 20px 0;
@@ -273,8 +267,7 @@ footer {
     border-radius: 10px;
 }
 
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .banner-content h2 {
         font-size: 2rem;
     }
@@ -288,7 +281,6 @@ footer {
     }
     
     .ProdutosDestaque {
-        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     
@@ -307,7 +299,7 @@ footer {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1024px) {
     .banner-content h2 {
         font-size: 1.5rem;
     }
