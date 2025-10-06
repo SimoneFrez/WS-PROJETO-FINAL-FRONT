@@ -1,31 +1,19 @@
-function logarUsuario() {
+async function logarUsuario() {
     const email = document.getElementById("emailLogin").value;
     const senha = document.getElementById("senhaLogin").value;
-    const lembrar = document.getElementById("lembrarLogin").checked;
+    
+    const resposta = await fetch(base_url);
+    const usuarios = await respota.json();
 
-    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-    const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
+    const usuarioEncontrado = usuarios.find(
+        (user) => user.email === email && user.password === senha
+    );
 
-    if (!usuarioEncontrado) {
-        alert("E-mail ou senha incorretos!");
-        return;
-    }
-
-    if (lembrar) {
-        localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
+    if (usuarioEncontrado) {
+        alert("Login realizado com sucesso!");
+        saveUser(usuarioEncontrado);
+        window.location.href = "../Home/index.html";
     } else {
-        sessionStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
+        alert("Email ou senha incorretos. Por favor, tente novamente.");
     }
-
-    window.location.href = "../Home/index.html";
-}
-
-function loadUser() {
-    const user = JSON.parse(localStorage.getItem("usuarioLogado")) || 
-                 JSON.parse(sessionStorage.getItem("usuarioLogado"));
-    if (user) {
-        document.getElementById("nomeUser").innerText = user.nome;
-    }
-}
-
-document.addEventListener('DOMContentLoaded', loadUser);
+} 
