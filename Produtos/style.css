@@ -6,8 +6,13 @@ body {
 }
 
 .navbar {
-  background-color: #87d4d4 !important;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #87d4d4 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar-brand {
@@ -132,13 +137,21 @@ body {
   background-color: #b02a37;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 footer {
-  text-align: center;
-  padding: 15px 0;
-  background-color: #87d4d4;
-  color: white;
-  margin-top: 40px;
-  font-size: 0.9rem;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #87d4d4;
+    color: white;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: auto; /* Isso empurra o footer para o final */
 }
 
 @media (max-width: 768px) {
