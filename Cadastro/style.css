@@ -1,0 +1,231 @@
+body {
+    background-color: #e0f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: #87d4d4 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333 !important;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-link {
+    color: #333 !important;
+    margin-right: 10px;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    color: #007bff !important;
+}
+
+main.container {
+    flex: 1;
+    padding: 2rem 0;
+    max-width: 1200px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.form-section h2 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.form-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.form-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #87d4d4;
+    box-shadow: 0 0 5px rgba(135, 212, 212, 0.5);
+}
+
+.form-group input::placeholder {
+    color: #999;
+    opacity: 0.7;
+}
+
+.botao {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.botao:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.botao:active {
+    transform: translateY(0);
+}
+
+.login-text {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #333;
+    font-size: 1rem;
+}
+
+.login-text a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.login-text a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.form-group input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #dc3545;
+    background-color: #ffe6e6;
+}
+
+.form-group input:valid:not(:focus):not(:placeholder-shown) {
+    border-color: #28a745;
+    background-color: #e6ffe6;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #87d4d4;
+    color: white;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .navbar .nav-link {
+        margin-right: 0;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    
+    main.container {
+        padding: 1rem;
+    }
+    
+    .form-card {
+        padding: 20px;
+        margin: 0 1rem;
+    }
+    
+    .form-section h2 {
+        font-size: 1.75rem;
+    }
+    
+    .botao {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .form-card {
+        padding: 15px;
+    }
+    
+    .form-group input {
+        padding: 10px 12px;
+    }
+}
+
+.botao:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.page-banner {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-banner-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.botao:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
