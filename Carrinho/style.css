@@ -18,7 +18,8 @@
     font-weight: 500;
 }
 
-.navbar .nav-link:hover {
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
     color: #007bff !important;
 }
 
