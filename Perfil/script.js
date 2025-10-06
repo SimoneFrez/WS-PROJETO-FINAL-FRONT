@@ -1,6 +1,6 @@
 class Perfil {
     constructor(usuarioId) {
-        this.usuarioId = usuarioId; 
+        this.usuarioId = usuarioId;
     }
 
     async atualizarUsuario() {
@@ -28,7 +28,7 @@ class Perfil {
     }
 
     async deletarUsuario() {
-        if (!this.usuarioId) return alert ('Usuário não encontrado.');
+        if (!this.usuarioId) return alert('Usuário não encontrado.');
         if (!confirm('Tem certeza que deseja deletar sua conta?')) return;
 
         try {
@@ -38,7 +38,8 @@ class Perfil {
 
             if (response.ok) {
                 alert('Conta deletada com sucesso!');
-                window.location.href = '../Login/index.html'; 
+                localStorage.removeItem('@dataUser'); // ✅ limpar localStorage
+                window.location.href = '../Login/index.html';
             } else {
                 alert('Erro ao deletar conta.');
             }
@@ -48,4 +49,18 @@ class Perfil {
     }
 }
 
-const perfil = new Perfil(1);
+const usuarioLogado = JSON.parse(localStorage.getItem('@dataUser'));
+const perfil = new Perfil(usuarioLogado?.id);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const usuarioLogado = JSON.parse(localStorage.getItem('@dataUser'));
+
+    if (usuarioLogado) {
+        document.getElementById('nomePerfil').value = usuarioLogado.nome || '';
+        document.getElementById('emailPerfil').value = usuarioLogado.email || '';
+        document.getElementById('senhaPerfil').value = usuarioLogado.senha || '';
+    } else {
+        alert('Nenhum usuário logado encontrado. Faça login novamente.');
+        window.location.href = '../Login/index.html';
+    }
+});

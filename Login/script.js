@@ -1,9 +1,9 @@
 async function logarUsuario() {
     const email = document.getElementById("emailLogin").value;
     const senha = document.getElementById("senhaLogin").value;
-    
+
     const resposta = await fetch(base_url);
-    const usuarios = await respota.json();
+    const usuarios = await resposta.json();
 
     const usuarioEncontrado = usuarios.find(
         (user) => user.email === email && user.password === senha
@@ -16,4 +16,4 @@ async function logarUsuario() {
     } else {
         alert("Email ou senha incorretos. Por favor, tente novamente.");
     }
-} 
+}
