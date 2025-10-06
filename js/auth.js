@@ -1,62 +1,89 @@
-/*
-    js/auth.js
-    Responsável por toda a lógica de autenticação do usuário.
-*/
+// Função para cadastrar usuário
+function cadastrarUsuario(event) {
+    event.preventDefault(); // impede reload da página
 
-// --- FUNÇÃO DE CADASTRO ---
-function cadastrarUsuario() {
-    const nome = document.getElementById('nomeCadastro').value;
-    const email = document.getElementById('emailCadastro').value;
-    const senha = document.getElementById('senhaCadastro').value;
-    const confirmaSenha = document.getElementById('confirmaSenhaCadastro').value;
+    const nome = document.getElementById("nomeCadastro").value;
+    const email = document.getElementById("emailCadastro").value;
+    const senha = document.getElementById("senhaCadastro").value;
+    const confirmaSenha = document.getElementById("confirmaSenhaCadastro").value;
 
-    if (!nome || !email || !senha || !confirmaSenha) {
-        alert("Por favor, preencha todos os campos.");
-        return;
-    }
+    // Valida se as senhas coincidem
     if (senha !== confirmaSenha) {
-        alert("As senhas não coincidem. Tente novamente.");
-        return;
-    }
-    if (!email.includes('@') || !email.includes('.')) {
-        alert("Por favor, insira um e-mail válido.");
+        alert("As senhas não coincidem!");
         return;
     }
 
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const usuarioExistente = usuarios.find(user => user.email === email);
-    if (usuarioExistente) {
-        alert("Este e-mail já está cadastrado. Tente fazer login.");
+    const convertJson = JSON.stringify(data);
+
+    fetch(base_url, {
+        method: 'POST',
+        body: convertJson,
+        headers: {
+            'Content-type': 'application/json'
+        }
+    }).then((resposta) => {
+
+        if (resposta.status === 201) {
+            alert("Usuario criado com sucesso");
+            location.reload();
+        } else {
+            alert("Não foi possivel criar o usario");
+        }
+
+    }).catch(() => {
+        alert("Não foi possivel conectar com o servidor");
+    })
+
+    // Recupera usuários salvos ou cria um array vazio
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // Verifica se o email já existe
+    if (usuarios.some(u => u.email === email)) {
+        alert("Este e-mail já está cadastrado!");
         return;
     }
 
-    usuarios.push({ nome, email, senha });
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-    alert("Cadastro realizado com sucesso!");
-    // O link para login.html está correto, pois a página de cadastro já está na pasta "pages"
-    window.location.href = "login.html";
+    // Adiciona novo usuário
+    const novoUsuario = { nome, email, senha };
+    usuarios.push(novoUsuario);
+
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    alert("Cadastro realizado com sucesso! Agora faça login.");
+    window.location.href = "../Login/login.html"; // redireciona para login
 }
 
-
-// --- FUNÇÃO DE LOGIN ---
+// Função para logar usuário
 function logarUsuario() {
-    const email = document.getElementById('emailLogin').value;
-    const senha = document.getElementById('senhaLogin').value;
+    const email = document.getElementById("emailLogin").value;
+    const senha = document.getElementById("senhaLogin").value;
 
-    if (!email || !senha) {
-        alert("Por favor, preencha e-mail e senha.");
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
+
+    if (!usuarioEncontrado) {
+        alert("E-mail ou senha incorretos!");
         return;
     }
 
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const usuarioEncontrado = usuarios.find(user => user.email === email && user.senha === senha);
+    // Salva usuário logado
+    localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
 
-    if (usuarioEncontrado) {
-        alert(`Bem-vindo, ${usuarioEncontrado.nome}!`);
-        localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
-        // CORRIGIDO: Adicionado "../" para voltar uma pasta antes de ir para o index.html
-        window.location.href = "../index.html";
-    } else {
-        alert("E-mail ou senha incorretos.");
+    // Redireciona para a Home
+    window.location.href = "../Home/index.html";
+}
+
+// Função para verificar se usuário está logado na Home
+function verificarLogin() {
+    const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
+    if (!usuario) {
+        // Se não estiver logado, redireciona para login
+        window.location.href = "../Login/login.html";
     }
 }
+
+// Função para logout
+function logout() {
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "../Login/login.html";
+}
+

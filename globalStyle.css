@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #e0f7f7;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* ======= NAVBAR / HEADER ======= */
+.navbar, header {
+    background-color: #00f7f7;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.navbar-brand, header h1, header .titulo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Links gerais */
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #007bff;
+}
+
+/* ======= BOTÕES ======= */
+button,
+.botao {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+button:hover,
+.botao:hover {
+    background-color: #218838;
+}
+
+/* ======= SEÇÕES GERAIS ======= */
+main {
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* ======= FORMULÁRIOS ======= */
+form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-campo {
+    margin-bottom: 15px;
+}
+
+.form-campo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-campo input, 
+.form-campo select, 
+.form-campo textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.form-campo input:focus, 
+.form-campo select:focus, 
+.form-campo textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* ======= CARDS / PRODUTOS ======= */
+.produto, .card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.produto img, .card img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* ======= RODAPÉ ======= */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #87d4d4;
+    color: white;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+
+/* --- MOBILE (até 768px) --- */
+@media (min-width: 768px) {
+
+    header .titulo {
+        font-size: 1.3rem;
+    }
+
+    .produto, .card {
+        margin: 10px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+/* --- DESKTOP (a partir de 1024px) --- */
+@media (max-width: 1024px) {
+    
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .ProdutosDestaque {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .produto, .card {
+        text-align: left;
+    }
+}

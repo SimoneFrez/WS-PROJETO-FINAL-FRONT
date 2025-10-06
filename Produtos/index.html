@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - Cuidado Essencial</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../globalStyle.css" rel="stylesheet">
+  <link href="./style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../globalScript.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="./script.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="../Home/index.html">
+          <i class="bi bi-flower1 me-2"></i>Cuidado Essencial
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="../Home/index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="../Produtos/index.html">Produtos</a></li>
+            <li class="nav-item"><a class="nav-link" href="../Carrinho/index.html">Carrinho</a></li>
+            <li class="nav-item"><a class="nav-link" href="../Cadastro/index.html">Cadastro</a></li>
+            <li class="nav-item"><a class="nav-link" href="../Login/index.html">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="../Faq/index.html">Faq</a></li>
+            <li class="nav-item"><a class="nav-link" href="../Perfil/index.html">Perfil</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="secao-bem-vindo">
+      <h1>Monte seu Kit Essencial</h1>
+      <p>Escolha os produtos abaixo para adicionar ao seu carrinho.</p>
+    </section>
+
+    <div class="lista-produtos">
+      <div class="produto">
+        <img src="./assets/VitaminaC.png" alt="Vitamina C">
+        <h3>Vitamina C</h3>
+        <p>R$ 25,00</p>
+        <button class="botao" onclick="adicionarAoCarrinho('Vitamina C', 25.00)">Adicionar</button>
+      </div>
+
+      <div class="produto">
+            <img src="./assets/medicamentoGenerico.png" alt="Remédio Genérico do Serratec">
+            <h3>Remédio Serratec</h3>
+            <span id="desconto">R$ 120,00</span> 
+            <span>R$ 12,00</span>
+
+            <button class="botao" onclick="adicionarAoCarrinho('Remédio Genérico do Serratec', 12.00)">Adicionar</button>
+      </div>
+
+      <div class="produto">
+        <img src="./assets/chaDEcamomila.png" alt="Chá de Camomila">
+        <h3>Chá de Camomila</h3>
+        <p>R$ 15,50</p>
+        <button class="botao" onclick="adicionarAoCarrinho('Chá de Camomila', 15.50)">Adicionar</button>
+      </div>
+
+      <div class="produto" data-id="1">
+        <img src="./assets/Gomas.png" alt="Kit de Gomas">
+        <h3>Kit de Gomas</h3>
+        <p class="preco-gomas">A partir de R$ 50,00</p>
+        <button class="botao" data-bs-toggle="modal" data-bs-target="#modalKitGomas">Montar Kit</button>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalKitGomas" tabindex="-1" aria-labelledby="modalKitGomasLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalKitGomasLabel">Monte seu Kit de Gomas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="select-tamanho" class="form-label">Tamanho:</label>
+              <select class="form-select" id="select-tamanho">
+                <option value="30">30 Gomas</option>
+                <option value="60">60 Gomas</option>
+              </select>
+            </div>
+
+            <div id="sabores-container"></div>
+
+            <div class="mb-3">
+              <label for="input-quantidade" class="form-label">Quantidade:</label>
+              <input type="number" class="form-control" id="input-quantidade" value="1" min="1">
+            </div>
+
+            <p id="preco-modal" class="text-end fw-bold">Preço: R$ 50,00</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary" onclick="adicionarKitAoCarrinho()">Adicionar ao
+              Carrinho</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Trabalho Final Serratec - 2025</p>
+  </footer>
+
+</body>
+
+</html>
