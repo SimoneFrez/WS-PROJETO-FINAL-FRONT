@@ -1,4 +1,4 @@
-/* ===== RESET E BODY ===== */
+/* ===== ESTILO GERAL ===== */
 body {
     background-color: #e0f7f7;
     font-family: Arial, sans-serif;
@@ -9,7 +9,6 @@ body {
     flex-direction: column;
 }
 
-/* ===== NAVBAR ===== */
 .navbar {
     background-color: #87d4d4 !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -19,7 +18,6 @@ body {
     width: 100%;
     z-index: 1000;
 }
-
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
@@ -38,7 +36,6 @@ body {
     color: #007bff !important;
 }
 
-/* ===== CONTAINERS ===== */
 main.container {
     flex: 1;
     padding: 2rem 0;
@@ -51,83 +48,6 @@ main.container {
     align-items: center;
     min-height: 70vh;
     padding: 2rem 0;
-}
-
-/* ===== PERFIL ===== */
-#perfil-container {
-    max-width: 400px;
-    margin: 60px auto;
-    padding: 30px 25px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-#perfil-container h2 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    color: #333;
-    font-weight: 600;
-}
-
-#perfil-container input {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border 0.3s, box-shadow 0.3s;
-}
-
-#perfil-container input:focus {
-    border-color: #28a745;
-    box-shadow: 0 0 6px rgba(40, 167, 69, 0.3);
-    outline: none;
-}
-
-#perfil-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;   
-    min-height: calc(100vh - 120px); 
-}
-
-#perfil-container button {
-    width: 48%;
-    padding: 12px 0;
-    margin-right: 4%;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-#perfil-container button:last-child {
-    margin-right: 0;
-}
-
-#perfil-container button:first-child {
-    background-color: #28a745;
-    color: #fff;
-}
-
-#perfil-container button:first-child:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-}
-
-#perfil-container button:last-child {
-    background-color: #dc3545;
-    color: #fff;
-}
-
-#perfil-container button:last-child:hover {
-    background-color: #b02a37;
-    transform: translateY(-2px);
 }
 
 .login-container {
@@ -192,16 +112,6 @@ main.container {
 .form-campo input::placeholder {
     color: #999;
     opacity: 0.7;
-}
-
-.form-campo input:invalid:not(:focus):not(:placeholder-shown) {
-    border-color: #dc3545;
-    background-color: #ffe6e6;
-}
-
-.form-campo input:valid:not(:focus):not(:placeholder-shown) {
-    border-color: #28a745;
-    background-color: #e6ffe6;
 }
 
 .form-options {
@@ -287,8 +197,111 @@ main.container {
     transform: translateY(0);
 }
 
+.login-divider {
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.login-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.login-divider span {
+    background-color: #f9f9f9;
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.register-link {
+    text-align: center;
+    color: #333;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.register-link a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #87d4d4;
+    color: white;
+    margin-top: auto;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.form-campo input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #dc3545;
+    background-color: #ffe6e6;
+}
+
+.form-campo input:valid:not(:focus):not(:placeholder-shown) {
+    border-color: #28a745;
+    background-color: #e6ffe6;
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-link {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    main.container {
+        padding: 1rem;
+    }
+    
+    .login-container {
+        padding: 30px 20px;
+        margin: 0 1rem;
+    }
+    
+    .login-container h2 {
+        font-size: 1.75rem;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .botao {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .login-container {
+        padding: 25px 15px;
+    }
+    
+    .form-campo input {
+        padding: 10px 12px;
+    }
+}
+
 .botao:disabled {
-    opacity: 0.7;
+    background-color: #6c757d;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
@@ -302,6 +315,15 @@ main.container {
     display: inline-block;
 }
 
+.icon-email::before {
+    content: '✉️';
+    margin-right: 5px;
+}
+
+.icon-password::before {
+    content: '🔒';
+    margin-right: 5px;
+}
 .page-banner {
     width: 100%;
     margin-bottom: 2rem;
@@ -317,80 +339,16 @@ main.container {
     display: block;
 }
 
-.icon-email::before {
-    content: '✉️';
-    margin-right: 5px;
-}
-
-.icon-password::before {
-    content: '🔒';
-    margin-right: 5px;
-}
-
 .spinner {
     animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-footer {
-    text-align: center;
-    padding: 15px 0;
-    background-color: #87d4d4;
-    color: white;
-    margin-top: auto;
-    font-size: 0.9rem;
-    width: 100%;
-}
-
-@media (min-width: 768px) {
-    .navbar .nav-link {
-        margin-right: 0;
-        margin-bottom: 5px;
-    }
-    main.container {
-        padding: 1rem;
-    }
-    .login-container {
-        padding: 30px 20px;
-        margin: 0 1rem;
-    }
-    .login-container h2 {
-        font-size: 1.75rem;
-    }
-    .form-options {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
-    }
-    #perfil-container {
-        margin: 40px 20px;
-        padding: 25px 20px;
-    }
-    #perfil-container h2 {
-        font-size: 1.6rem;
-    }
-    #perfil-container button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    #perfil-container button:last-child {
-        margin-bottom: 0;
-    }
-}
-
-@media (max-width: 1024px) {
-    .login-container {
-        padding: 25px 15px;
-    }
-    .form-campo input {
-        padding: 10px 12px;
-    }
+.botao:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
