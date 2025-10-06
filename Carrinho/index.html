@@ -37,7 +37,6 @@
                         <li class="nav-item"><a class="nav-link" href="../Cadastro/index.html">Cadastro</a></li>
                         <li class="nav-item"><a class="nav-link" href="../Login/index.html">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="../Faq/index.html">Faq</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../Perfil/index.html">Perfil</a></li>
                         <button id="abrirCarrinho">Carrinho(<span id='contagemCarrinhos'>0</span>)</button>
                     </ul>
                 </div>
@@ -46,11 +45,12 @@
     </header>
 
     <main class="container">
+        <h2>Seu Carrinho de Compras</h2>
+        <div id="lista-carrinho"></div>
+
         <div class="carrinho-total">
-            <h2>Seu Carrinho de Compras</h2>
             <h3>Total: <span id="valor-total">R$ 0.00</span></h3>
         </div>
-        <div id="lista-carrinho"></div>
         <button class="botao" onclick="window.location.href='../Checkout/index.html'">Finalizar compra</button>
     </main>
     <footer>
