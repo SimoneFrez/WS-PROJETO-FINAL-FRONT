@@ -9,7 +9,6 @@ body {
     flex-direction: column;
 }
 
-/* ===== NAVBAR ===== */
 .navbar {
     background-color: #87d4d4 !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -32,7 +31,6 @@ body {
     color: #007bff !important;
 }
 
-/* ===== MAIN CONTENT ===== */
 main.container {
     flex: 1;
     padding: 2rem 0;
@@ -47,7 +45,6 @@ main.container {
     padding: 2rem 0;
 }
 
-/* ===== CONTAINER DE LOGIN ===== */
 .login-container {
     background-color: #f9f9f9;
     border-radius: 10px;
@@ -64,7 +61,6 @@ main.container {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== CABEÇALHO DO LOGIN ===== */
 .login-container h2 {
     color: #333;
     font-weight: bold;
@@ -80,7 +76,6 @@ main.container {
     font-size: 0.95rem;
 }
 
-/* ===== FORMULÁRIO ===== */
 .form-campo {
     margin-bottom: 1.5rem;
 }
@@ -114,7 +109,6 @@ main.container {
     opacity: 0.7;
 }
 
-/* ===== OPÇÕES DO FORMULÁRIO ===== */
 .form-options {
     display: flex;
     justify-content: space-between;
@@ -172,7 +166,6 @@ main.container {
     text-decoration: underline;
 }
 
-/* ===== BOTÃO ===== */
 .botao {
     background-color: #28a745;
     color: white;
@@ -199,7 +192,6 @@ main.container {
     transform: translateY(0);
 }
 
-/* ===== DIVISOR ===== */
 .login-divider {
     text-align: center;
     margin: 1.5rem 0;
@@ -223,7 +215,6 @@ main.container {
     font-size: 0.9rem;
 }
 
-/* ===== LINK DE CADASTRO ===== */
 .register-link {
     text-align: center;
     color: #333;
@@ -243,7 +234,6 @@ main.container {
     text-decoration: underline;
 }
 
-/* ===== RODAPÉ ===== */
 footer {
     text-align: center;
     padding: 15px 0;
@@ -254,7 +244,6 @@ footer {
     width: 100%;
 }
 
-/* ===== VALIDAÇÃO ===== */
 .form-campo input:invalid:not(:focus):not(:placeholder-shown) {
     border-color: #dc3545;
     background-color: #ffe6e6;
@@ -265,7 +254,6 @@ footer {
     background-color: #e6ffe6;
 }
 
-/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
     .navbar .nav-link {
         margin-right: 0;
@@ -308,7 +296,6 @@ footer {
     }
 }
 
-/* ===== ESTADOS DE BOTÃO ===== */
 .botao:disabled {
     background-color: #6c757d;
     cursor: not-allowed;
@@ -324,7 +311,6 @@ footer {
     display: inline-block;
 }
 
-/* ===== ÍCONES ===== */
 .icon-email::before {
     content: '✉️';
     margin-right: 5px;
@@ -334,7 +320,6 @@ footer {
     content: '🔒';
     margin-right: 5px;
 }
-/* ===== BANNER PÁGINAS INTERNAS ===== */
 .page-banner {
     width: 100%;
     margin-bottom: 2rem;
@@ -349,7 +334,7 @@ footer {
     object-fit: cover;
     display: block;
 }
-/* No style.css do cadastro e login */
+
 .spinner {
     animation: spin 1s linear infinite;
 }

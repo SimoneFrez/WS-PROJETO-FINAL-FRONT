@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #00f7f7;
+    background-color: #87d4d4 !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -12,13 +12,14 @@
 }
 
 .navbar .nav-link {
-    color: #333;
+    color: #333 !important;
     margin-right: 10px;
     transition: color 0.3s;
+    font-weight: 500;
 }
 
 .navbar .nav-link:hover {
-    color: #007bff;
+    color: #007bff !important;
 }
 
 #abrirCarrinho {

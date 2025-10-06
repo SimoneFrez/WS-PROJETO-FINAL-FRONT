@@ -12,9 +12,8 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-brand {
-  font-weight: bold;
-  font-size: 1.5rem;
+.navbar .nav-link.active {
+    color: #007bff !important;
 }
 
 .navbar .nav-link {
@@ -81,6 +80,10 @@ body {
   margin-bottom: 10px;
 }
 
+#desconto{
+  text-decoration: line-through;
+}
+
 .botao {
   background-color: #28a745;
   color: white;
@@ -100,7 +103,6 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Modal */
 .modal-header,
 .modal-footer {
   background-color: #87d4d4;
@@ -129,7 +131,6 @@ body {
   background-color: #b02a37;
 }
 
-/* Rodapé */
 footer {
   text-align: center;
   padding: 15px 0;
@@ -139,7 +140,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .lista-produtos {
     gap: 20px;

@@ -1,4 +1,4 @@
-const base_url = "https://68dda3d7d7b591b4b78cfc7e.mockapi.io/Users";
+const base_url = "https://68dda3d7d7b591b4b78cfc7e.mockapi.io/usuarios";
 
 function saveUser(data) {
     console.log('Salvando usuário:', data);

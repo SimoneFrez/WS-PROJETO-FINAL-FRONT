@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link active" href="../Home/index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../Produtos/index.html">Monte seu Kit</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Produtos/index.html">Produtos</a></li>
                         <li class="nav-item"><a class="nav-link" href="../Carrinho/index.html">Carrinho</a></li>
                         <li class="nav-item"><a class="nav-link" href="../Cadastro/index.html">Cadastro</a></li>
                         <li class="nav-item"><a class="nav-link" href="../Login/index.html">Login</a></li>
@@ -46,10 +46,17 @@
                 <label for="nomeCompleto"><i class="fas fa-user me-1"></i>Nome Completo:</label>
                 <input type="text" id="nomeCompleto" required>
             </div>
+
             <div class="form-campo">
                 <label for="email"><i class="fas fa-envelope me-1"></i>E-mail:</label>
                 <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
             </div>
+
+            <div class="form-campo">
+                <label for="endereco"><i class="fas fa-envelope me-1"></i>Endereco:</label>
+                <input type="text" id="endereco" placeholder="Exemplo: Avenida Alberto Braune, 77 - Nova Friburgo, RJ" required>
+            </div>
+
             <div class="form-campo">
                 <label for="metodoPagamento"><i class="fas fa-credit-card me-1"></i>Escolha o metódo de pagamento:</label>
                 <select class="form-select" id="metodoPagamento" required>
@@ -66,20 +73,23 @@
                     <label for="numeroCartao"><i class="fas fa-credit-card me-1"></i>Número do Cartão:</label>
                     <input type="text" id="numeroCartao" maxlength="16" placeholder="1234 5678 9012 3456">
                 </div>
+                
                 <div class="form-campo">
                     <label for="validadeCartao"><i class="fas fa-calendar-alt me-1"></i>Validade:</label>
                     <input type="text" id="validadeCartao" maxlength="5" placeholder="MM/AA">
                 </div>
+
                 <div class="form-campo">
                     <label for="cvvCartao"><i class="fas fa-lock me-1"></i>CVV:</label>
                     <input type="text" id="cvvCartao" maxlength="3" placeholder="123">
                 </div>
             </div>
+
             <div id="pagamento-pix" style="display:none;">
                 <h4><i class="fas fa-qrcode me-2"></i>Pagamento via Pix</h4>
                 <p>Use o QR code abaixo para efetuar o pagamento via Pix:</p>
                 <img src="./assets/qrCode.png" alt="QR Code Pix" style="width:200px;height:200px;">
-                <p>Após o pagamento, envie o comprovante para nosso e-mail: pagamentos@cuidandoessencial.com></p>
+                <p>Após o pagamento, envie o comprovante para nosso e-mail: pagamentos@cuidandoessencial.com</p>
             </div>
 
             <button type="submit" class="botao">
@@ -89,9 +99,7 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>Trabalho Final Serratec - 2024</p>
-        </div>
+        <p>Trabalho Final Serratec - 2025</p>
     </footer>
 </body>
 </html>

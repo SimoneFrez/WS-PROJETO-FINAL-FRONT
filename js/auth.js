@@ -13,6 +13,27 @@ function cadastrarUsuario(event) {
         return;
     }
 
+    const convertJson = JSON.stringify(data);
+
+    fetch(base_url, {
+        method: 'POST',
+        body: convertJson,
+        headers: {
+            'Content-type': 'application/json'
+        }
+    }).then((resposta) => {
+
+        if (resposta.status === 201) {
+            alert("Usuario criado com sucesso");
+            location.reload();
+        } else {
+            alert("Não foi possivel criar o usario");
+        }
+
+    }).catch(() => {
+        alert("Não foi possivel conectar com o servidor");
+    })
+
     // Recupera usuários salvos ou cria um array vazio
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
