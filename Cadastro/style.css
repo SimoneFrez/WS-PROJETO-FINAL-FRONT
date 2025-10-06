@@ -11,6 +11,11 @@ body {
 .navbar {
     background-color: #87d4d4 !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar-brand {
@@ -28,7 +33,8 @@ body {
     font-weight: 500;
 }
 
-.navbar .nav-link:hover {
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
     color: #007bff !important;
 }
 
@@ -162,7 +168,6 @@ footer {
     .navbar .nav-link {
         margin-right: 0;
         margin-bottom: 5px;
-        text-align: center;
     }
     
     main.container {

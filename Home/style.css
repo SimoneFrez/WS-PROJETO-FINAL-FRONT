@@ -11,6 +11,11 @@ body {
 .navbar {
     background-color: #87d4d4 !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar-brand {
@@ -44,7 +49,6 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-    margin-bottom: 2%;
 }
 
 .banner-container {
@@ -58,7 +62,6 @@ body {
     display: block;
     object-fit: cover;
     max-height: 600px;
-    border-radius: 20px;
 }
 
 .banner-overlay {
