@@ -89,12 +89,11 @@ main.container {
 
 #perfil-wrapper {
     display: flex;
-    justify-content: center; /* centraliza horizontalmente */
-    align-items: center;     /* centraliza verticalmente */
-    min-height: calc(100vh - 120px); /* desconta navbar + footer */
+    justify-content: center;
+    align-items: center;   
+    min-height: calc(100vh - 120px); 
 }
 
-/* ===== BOTÕES ===== */
 #perfil-container button {
     width: 48%;
     padding: 12px 0;
@@ -131,7 +130,6 @@ main.container {
     transform: translateY(-2px);
 }
 
-/* ===== LOGIN ===== */
 .login-container {
     background-color: #f9f9f9;
     border-radius: 10px;
@@ -304,7 +302,6 @@ main.container {
     display: inline-block;
 }
 
-/* ===== OUTROS ===== */
 .page-banner {
     width: 100%;
     margin-bottom: 2rem;
@@ -343,7 +340,6 @@ main.container {
     }
 }
 
-/* ===== FOOTER ===== */
 footer {
     text-align: center;
     padding: 15px 0;
@@ -354,7 +350,6 @@ footer {
     width: 100%;
 }
 
-/* ===== RESPONSIVO ===== */
 @media (min-width: 768px) {
     .navbar .nav-link {
         margin-right: 0;

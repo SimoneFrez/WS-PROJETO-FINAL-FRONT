@@ -152,7 +152,7 @@ footer {
     .navbar .nav-link {
         margin-right: 0;
         margin-bottom: 5px;
-        text-align: center;
+        /* text-align: center; */
     }
     
     main.container {

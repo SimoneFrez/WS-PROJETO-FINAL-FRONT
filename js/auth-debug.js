@@ -1,4 +1,3 @@
-// Versão de debug para identificar o problema
 async function cadastrarUsuario() {
     const nome = document.getElementById('nomeCadastro').value;
     const email = document.getElementById('emailCadastro').value;
@@ -7,7 +6,6 @@ async function cadastrarUsuario() {
 
     console.log('Dados do formulário:', { nome, email, senha, confirmaSenha });
 
-    // Validações básicas
     if (!nome || !email || !senha || !confirmaSenha) {
         alert('Por favor, preencha todos os campos.');
         return;
@@ -19,7 +17,6 @@ async function cadastrarUsuario() {
     }
 
     try {
-        // Testar a API primeiro
         console.log('Testando conexão com a API...');
         const testResponse = await fetch(base_url);
         console.log('Status da API:', testResponse.status);
@@ -31,7 +28,6 @@ async function cadastrarUsuario() {
         const testData = await testResponse.json();
         console.log('Estrutura da API:', testData);
 
-        // Verificar se usuário existe
         const searchResponse = await fetch(`${base_url}?email=${email}`);
         const users = await searchResponse.json();
         console.log('Resultado da busca:', users);
@@ -41,7 +37,6 @@ async function cadastrarUsuario() {
             return;
         }
 
-        // Tentar diferentes estruturas de dados
         const estruturas = [
             { name: nome, email: email, password: senha },
             { nome: nome, email: email, senha: senha },
@@ -78,14 +73,12 @@ async function cadastrarUsuario() {
             alert('Cadastro realizado com sucesso!');
             window.location.href = '../Home/index.html';
         } else {
-            // Fallback para localStorage
             console.log('Usando fallback para localStorage...');
             cadastrarUsuarioLocalStorage(nome, email, senha);
         }
 
     } catch (error) {
         console.error('Erro completo:', error);
-        // Fallback para localStorage
         cadastrarUsuarioLocalStorage(nome, email, senha);
     }
 }
